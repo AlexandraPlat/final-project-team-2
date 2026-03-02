@@ -77,3 +77,6 @@ export default defineConfig([
 TechShop
 >>>>>>> 0d9d52eaa8a20fc2066ecad7b01e4d6d5f3f2af2
 # final2
+
+
+FIGMA https://www.figma.com/design/dPgKFiD6lGIwXxfw6Q401X/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82?node-id=1-284&t=pUcfYi9FfigY9Dxu-1
