@@ -3,11 +3,14 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 // Тип товара.
 // Потом можно заменить на настоящий тип из products.
 export type Product = {
-  id: number;
+  id: string;
   title: string;
+  description: string;
   price: number;
-  category: string;
   image: string;
+  category: string;
+  rating: number;
+  stock: number;
 };
 
 // Товар в корзине = товар + количество
@@ -49,15 +52,15 @@ const cartSlice = createSlice({
 
     // 2. Увеличить количество (+1)
     // Принимает только ID товара (number)
-    increaseQty: (state, action: PayloadAction<number>) => {
+    increaseQty: (state, action: PayloadAction<string>) => {
       // Находим нужный товар и плюсуем
       const item = state.items.find((i) => i.id === action.payload);
       if (item) item.qty += 1;
     },
 
     // 3. Уменьшить количество (-1)
-    // Принимает только ID товара (number)
-    decreaseQty: (state, action: PayloadAction<number>) => {
+    // Принимает только ID товара (string)
+    decreaseQty: (state, action: PayloadAction<string>) => {
       const item = state.items.find((i) => i.id === action.payload);
       if (!item) return;
       // Если товар не найден — просто ничего не делаем и выходим
@@ -70,7 +73,7 @@ const cartSlice = createSlice({
     },
 
     // 4. Удалить товар полностью
-    removeFromCart: (state, action: PayloadAction<number>) => {
+    removeFromCart: (state, action: PayloadAction<string>) => {
       // Оставляем в массиве только те товары, у которых ID НЕ совпадает с переданным
       state.items = state.items.filter((i) => i.id !== action.payload);
     },
