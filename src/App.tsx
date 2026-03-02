@@ -4,6 +4,7 @@ import "./App.css";
 import SearchBar from "./pages/CatalogPage/components/SearchBar";
 import { BrowserRouter } from "react-router-dom";
 import ProductGrid from "./pages/CatalogPage/components/ProductGrid";
+import Footer from "./components/layout/Footer";
 
 const fakeProducts = [
   {
@@ -46,6 +47,7 @@ const fakeProducts = [
 
 function App() {
   const [search, setSearch] = useState("");
+
   return (
     <BrowserRouter>
       <div style={{ padding: 32 }}>
@@ -53,8 +55,11 @@ function App() {
         <p>Я ищу: {search}</p>
         <ProductGrid products={fakeProducts} />
       </div>
+
+      <Footer />
     </BrowserRouter>
   );
 }
+
 
 export default App;
