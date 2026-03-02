@@ -1,17 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-
-// Тип товара.
-// Потом можно заменить на настоящий тип из products.
-export type Product = {
-  id: string;
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-  category: string;
-  rating: number;
-  stock: number;
-};
+import type { Product } from "../../types";
 
 // Товар в корзине = товар + количество
 type CartItem = Product & {
@@ -96,5 +84,4 @@ export const {
 } = cartSlice.actions;
 
 // Экспортируем сам редьюсер, чтобы подключить его в store.ts
-
 export default cartSlice;

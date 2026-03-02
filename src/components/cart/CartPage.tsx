@@ -1,7 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../../app/store";
 import styles from "./cart.module.css";
-import { clearCart, decreaseQty, increaseQty, removeFromCart } from "./cartSlice";
+import {
+  clearCart,
+  decreaseQty,
+  increaseQty,
+  removeFromCart,
+} from "./cartSlice";
 import { Link } from "react-router-dom";
 
 // SHIPPING — фиксированная стоимость доставки.
@@ -60,7 +65,6 @@ export default function CartPage() {
       ) : (
         /* Заполненная корзина */
         <div className={styles.cartGrid}>
-
           {/* === Левая часть: список товаров === */}
           <div className={styles.cartList}>
             {items.map((item) => (
@@ -105,11 +109,9 @@ export default function CartPage() {
                 </div>
 
                 {/* Цена одного товара */}
-                <div className={styles.cartPrice}>
-                  ${item.price.toFixed(2)}
-                </div>
+                <div className={styles.cartPrice}>${item.price.toFixed(2)}</div>
 
-                 {/* Удаление позиции полностью */}
+                {/* Удаление позиции полностью */}
                 <button
                   className={styles.cartRemove}
                   onClick={() => dispatch(removeFromCart(item.id))}
@@ -122,8 +124,42 @@ export default function CartPage() {
           </div>
 
           {/* ==== Правая часть: Order Summary ==== */}
-          <div>
-            
+          <div className={styles.summaryCard}>
+            <h3 className={styles.summaryTitle}>Order Summary</h3>
+
+            {/* Сумма товаров */}
+            <div className={styles.summaryRow}>
+              <span>Items ({itemsCount})</span>
+              <span>${subtotal.toFixed(2)}</span>
+            </div>
+
+            {/* Фиксированная доставка */}
+            <div className={styles.summaryRow}>
+              <span>Shipping</span>
+              <span>${SHIPPING.toFixed(2)}</span>
+            </div>
+
+            {/* визуальный разделитель */}
+            <div className={styles.summaryDivider} />
+
+            {/* Итог */}
+            <div className={styles.summaryTotalRow}>
+              <span>Total</span>
+              <span className={styles.summaryTotal}>${total.toFixed(2)}</span>
+            </div>
+
+            {/* Оформление заказа */}
+            <button
+              className={styles.summaryPrimaryBtn}
+              onClick={() => alert("Checkout позже 😉")}
+            >
+              Proceed to Checkout
+            </button>
+
+            {/* Возврат в каталог */}
+            <Link className={styles.summaryLink} to="/catalog">
+              ← Continue Shopping
+            </Link>
           </div>
         </div>
       )}

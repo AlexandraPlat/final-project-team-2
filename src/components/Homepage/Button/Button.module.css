@@ -1,0 +1,33 @@
+.btn-primary {
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ffce00;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .btn-primary {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%; 
+  }
+}
