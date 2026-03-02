@@ -1,0 +1,43 @@
+.header {
+  background-color: #111;
+  color: white;
+  padding: 16px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav__list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: #4f8cff;
+}
+
+.nav__link.active {
+  color: #4f8cff;
+}
