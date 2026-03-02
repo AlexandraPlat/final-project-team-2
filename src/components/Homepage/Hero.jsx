@@ -1,25 +1,27 @@
-import FeatureItem from "./FeatureItem";
-import Container from "../ui/Container";
-import styles from "./Hero.module.css";
+import "./Hero.module.css";
+import { NavLink } from "react-router-dom";
 
-
-const features = [
-  { icon: "🚚", title: "Free Delivery", desc: "On orders over $50" },
-  { icon: "🔒", title: "Secure Payments", desc: "100% protected" },
-  { icon: "🔄", title: "Easy Returns", desc: "30-day return policy" },
-  { icon: "💬", title: "24/7 Support", desc: "We are here to help" }
-];
-
-export default function Features() {
+export default function Hero() {
   return (
-    <section className="features">
-      <Container>
-        <div className="features__grid">
-          {features.map((item, index) => (
-            <FeatureItem key={index} {...item} />
-          ))}
-        </div>
-      </Container>
+    <section className="hero">
+      <div className="hero__content">
+        <span className="hero__badge">🚀 New Arrivals 2025</span>
+
+        <h1 className="hero__title">
+          The Future of Tech,
+          <br />
+          In Your Hands
+        </h1>
+
+        <p className="hero__subtitle">
+          Discover the latest gadgets and innovation. Premium quality,
+          unbeatable prices, and exceptional service.
+        </p>
+
+        <NavLink to="/catalog" className="hero__button">
+          Shop Now →
+        </NavLink>
+      </div>
     </section>
   );
 }
