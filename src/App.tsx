@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Homepage/layout/Header";
-import Hero from "./components/Homepage/Hero"
+
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+
+import Hero from "./components/Homepage/Hero";
 import Features from "./components/Homepage/Features";
 import CallToAction from "./components/Homepage/CallToAction";
-import Footer from "./components/layout/Footer";
 
 function Home() {
   return (

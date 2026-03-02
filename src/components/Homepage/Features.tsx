@@ -1,5 +1,5 @@
 import FeatureItem from "./FeatureItem";
-import Container from "../ui/Container";
+import Container from "./Container";
 
 const features = [
   { icon: "🚚", title: "Free Delivery", desc: "On orders over $50" },
@@ -14,7 +14,7 @@ export default function Features() {
       <Container>
         <div className="features__grid">
           {features.map((item, index) => (
-            <FeatureItem key={index} {...item} />
+            <FeatureItem description={""} key={index} {...item} />
           ))}
         </div>
       </Container>
