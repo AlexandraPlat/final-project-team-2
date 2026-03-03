@@ -1,6 +1,9 @@
+import Button from "./Button/Button";
 import styles from "./Hero.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section className={styles.hero}>
       <div className={styles.badge}>New Arrivals 2025</div>
@@ -8,7 +11,13 @@ export default function Hero() {
       <p className={styles.subtitle}>
         Discover the latest gadgets and innovation.
       </p>
-      <button className={styles.button}>Shop Now</button>
+      <Button
+        variant="light"
+        className={styles.button}
+        onClick={() => navigate("/catalog")}
+      >
+        Shop Now
+      </Button>
     </section>
   );
 }

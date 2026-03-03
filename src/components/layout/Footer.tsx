@@ -1,19 +1,19 @@
 import { NavLink } from "react-router-dom";
-import "./Footer.module.css";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footer__inner">
+    <footer className={styles.footer}>
+      <div className={styles.container}>
         
-        <div className="footer__brand">
-          <h3 className="footer__logo">Tech Store</h3>
-          <p className="footer__text">
+        <div className={styles.brand}>
+          <h3 className={styles.logo}>Tech Store</h3>
+          <p className={styles.text}>
             Modern tech for modern people.
           </p>
         </div>
 
-        <div className="footer__links">
+        <div className={styles.links}>
           <h4>Navigation</h4>
           <ul>
             <li><NavLink to="/">Home</NavLink></li>
@@ -22,7 +22,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="footer__contact">
+        <div className={styles.contact}>
           <h4>Contact</h4>
           <p>Email: support@techstore.com</p>
           <p>Phone: +1 (555) 123-4567</p>
@@ -30,7 +30,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="footer__bottom">
+      <div className={styles.bottom}>
         © {new Date().getFullYear()} Tech Store. All rights reserved.
       </div>
     </footer>
