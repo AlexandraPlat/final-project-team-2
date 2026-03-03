@@ -5,6 +5,8 @@ import Footer from "./components/layout/Footer";
 import Features from "./components/Homepage/Features";
 import CallToAction from "./components/Homepage/CallToAction";
 import Hero from "./components/Homepage/Hero";
+import CatalogPage from "./pages/CatalogPage";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 function Home() {
   return (
@@ -23,7 +25,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<div>Catalog Page</div>} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/cart" element={<div>Cart Page</div>} />
       </Routes>
 
