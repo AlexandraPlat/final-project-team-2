@@ -74,7 +74,6 @@ const ProductPage = () => {
       </Link>
 
       <div className={styles.grid}>
-        {/* Левая колонка — фото */}
         <div className={styles.imageWrapper}>
           <img
             src={product.image}
@@ -83,7 +82,6 @@ const ProductPage = () => {
           />
         </div>
 
-        {/* Правая колонка — детали */}
         <div className={styles.details}>
           <span className={styles.category}>{product.category}</span>
           <h1 className={styles.title}>{product.title}</h1>
@@ -97,7 +95,6 @@ const ProductPage = () => {
 
           <p className={styles.description}>{product.description}</p>
 
-          {/* Наличие товара */}
           <div className={styles.stockLine}>
             {product.stock > 0 ? (
               <>
@@ -105,7 +102,7 @@ const ProductPage = () => {
                   className={`${styles.stockDot} ${styles.stockDotGreen}`}
                 />
                 <span className={styles.stockTextGreen}>
-                  In stock — {product.stock} units available
+                  In stock ({product.stock} pcs)
                 </span>
               </>
             ) : (
@@ -116,7 +113,6 @@ const ProductPage = () => {
             )}
           </div>
 
-          {/* Кнопка с тремя состояниями */}
           <button
             onClick={handleAddToCart}
             disabled={product.stock === 0}
@@ -129,7 +125,6 @@ const ProductPage = () => {
                 : "Add to Cart"}
           </button>
 
-          {/* Ссылка на корзину появляется только если товар туда добавлен */}
           {isInCart && !justAdded && (
             <Link to="/cart" className={styles.viewCartLink}>
               View Cart →
