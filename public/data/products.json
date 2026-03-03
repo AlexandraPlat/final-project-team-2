@@ -91,13 +91,13 @@
   },
   {
     "id": "prod-010",
-    "title": "ASUS ROG Swift 27\" 1440p 165Hz",
-    "description": "27\" IPS 2560x1440 display with 165Hz refresh rate, 1ms response time, G-Sync compatible. ELMB Sync technology eliminates ghosting and tearing. HDR400 certified. Perfect for competitive and immersive gaming.",
-    "price": 449,
-    "image": "https://images.unsplash.com/photo-1527443224154-c4a573d5f5dc?w=600&h=600&fit=crop&auto=format",
+    "title": "Dell UltraSharp 27\" 4K USB-C",
+    "description": "27\" IPS 3840x2160 monitor with stunning color accuracy (factory-calibrated), thin bezels, and a USB-C hub for single-cable laptop charging and display. Ideal for design, productivity, and crisp 4K content.",
+    "price": 529,
+    "image": "https://images.unsplash.com/photo-1575320854760-bfffc3550640?w=600&h=600&fit=crop&auto=format",
     "category": "Monitors",
-    "rating": 4.8,
-    "stock": 18
+    "rating": 4.7,
+    "stock": 12
   },
   {
     "id": "prod-011",
