@@ -8,7 +8,7 @@ import Hero from "./components/Homepage/Hero";
 import CatalogPage from "./pages/CatalogPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CartPage from "./components/cart/CartPage";
-import CatalogPage from "./pages/CatalogPage";
+
 
 function Home() {
   return (
