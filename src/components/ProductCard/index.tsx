@@ -7,9 +7,11 @@ interface Props {
 }
 
 const ProductCard = ({ product }: Props) => {
+  const to = `/product/${product.id}`;
+
   return (
-    <Link to={`/product/${product.id}`} className={styles.card}>
-      <div className={styles.imageWrapper}>
+    <div className={styles.card}>
+      <Link to={to} className={styles.imageWrapper}>
         <img
           src={product.image}
           alt={product.title}
@@ -17,16 +19,22 @@ const ProductCard = ({ product }: Props) => {
           loading="lazy"
         />
         <span className={styles.category}>{product.category}</span>
-      </div>
+      </Link>
 
       <div className={styles.body}>
-        <h3 className={styles.title}>{product.title}</h3>
+        <h3 className={styles.title}>
+          <Link to={to} className={styles.titleLink}>
+            {product.title}
+          </Link>
+        </h3>
+
         <div className={styles.meta}>
           <span className={styles.price}>
             ${product.price.toLocaleString()}
           </span>
           <span className={styles.rating}>★ {product.rating}</span>
         </div>
+
         <div className={styles.stock}>
           {product.stock > 0 ? (
             <span className={styles.inStock}>In stock</span>
@@ -35,7 +43,7 @@ const ProductCard = ({ product }: Props) => {
           )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

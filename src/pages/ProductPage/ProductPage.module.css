@@ -120,7 +120,8 @@
   font-size: 14px;
 }
 
-/* Кнопка "Add to Cart" все 4 состояния */
+/* Кнопка "Add to Cart" 
+ 4 состояния этой кнопки */
 .addBtn {
   width: 100%;
   font-weight: 700;
