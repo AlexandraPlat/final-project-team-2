@@ -1,0 +1,208 @@
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #2563eb;
+  font-weight: 500;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+.backLink:hover {
+  color: #1e40af;
+}
+
+/* Сетка 1 колонка на телефоне, 2 на десктопе */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.imageWrapper {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 1 / 1;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.priceLine {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.price {
+  font-size: 36px;
+  font-weight: 900;
+  color: #111827;
+}
+.ratingBadge {
+  background-color: #fffbeb;
+  color: #d97706;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 14px;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.stockLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.stockDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.stockDotGreen {
+  background-color: #22c55e;
+}
+.stockDotRed {
+  background-color: #ef4444;
+}
+.stockTextGreen {
+  color: #15803d;
+  font-weight: 500;
+  font-size: 14px;
+}
+.stockTextRed {
+  color: #dc2626;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Кнопка "Add to Cart" все 4 состояния */
+.addBtn {
+  width: 100%;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.addBtnDefault {
+  background-color: #2563eb;
+  color: #fff;
+}
+.addBtnDefault:hover {
+  background-color: #1d4ed8;
+}
+.addBtnInCart {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+.addBtnInCart:hover {
+  background-color: #bfdbfe;
+}
+.addBtnSuccess {
+  background-color: #22c55e;
+  color: #fff;
+}
+.addBtnDisabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.viewCartLink {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  color: #2563eb;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.viewCartLink:hover {
+  color: #1e40af;
+}
+
+/* Если товар не найден */
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 0;
+  text-align: center;
+}
+.notFoundIcon {
+  font-size: 72px;
+  margin-bottom: 24px;
+}
+.notFoundTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+.notFoundText {
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+.notFoundLink {
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+.notFoundLink:hover {
+  background-color: #1d4ed8;
+}
