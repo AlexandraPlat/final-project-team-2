@@ -8,7 +8,6 @@ import Hero from "./components/Homepage/Hero";
 import CatalogPage from "./pages/CatalogPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CartPage from "./components/cart/CartPage";
-import CatalogPage from "./pages/CatalogPage";
 
 function Home() {
   return (
@@ -28,7 +27,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/cart" element={<div>Cart Page</div>} />
         <Route path="/catalog" element={<div>Catalog Page</div>} />
         <Route path="/cart" element={<CartPage />} />
       </Routes>
