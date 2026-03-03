@@ -1,0 +1,122 @@
+[
+  {
+    "id": "prod-001",
+    "title": "Apple MacBook Pro 14\" M3 Pro",
+    "description": "The most powerful MacBook Pro ever. Features the M3 Pro chip with 12-core CPU and 18-core GPU, 18GB unified memory, and 512GB SSD. Perfect for developers, designers, and content creators who demand the best.",
+    "price": 1999,
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=600&fit=crop&auto=format",
+    "category": "Laptops",
+    "rating": 4.9,
+    "stock": 15
+  },
+  {
+    "id": "prod-002",
+    "title": "iPhone 15 Pro Max",
+    "description": "Titanium design meets the A17 Pro chip. Features a 48MP main camera with 5x optical zoom, Action Button, and USB-C with USB 3 speeds. The most advanced iPhone ever made.",
+    "price": 1199,
+    "image": "https://images.unsplash.com/photo-1695639526461-7244f263119c?w=600&h=600&fit=crop&auto=format",
+    "category": "Smartphones",
+    "rating": 4.8,
+    "stock": 32
+  },
+  {
+    "id": "prod-003",
+    "title": "Samsung Galaxy S24 Ultra",
+    "description": "200MP main camera, built-in S Pen, Snapdragon 8 Gen 3 processor, 12GB RAM, and a stunning 6.8\" QHD+ Dynamic AMOLED display. The ultimate Android flagship for power users.",
+    "price": 1299,
+    "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600&h=600&fit=crop&auto=format",
+    "category": "Smartphones",
+    "rating": 4.7,
+    "stock": 28
+  },
+  {
+    "id": "prod-004",
+    "title": "Sony WH-1000XM5 Wireless Headphones",
+    "description": "Industry-leading noise canceling with Auto NC Optimizer. Crystal clear hands-free calling with Speak-to-Chat. Up to 30-hour battery life. Multipoint connection for two devices simultaneously.",
+    "price": 349,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop&auto=format",
+    "category": "Audio",
+    "rating": 4.8,
+    "stock": 50
+  },
+  {
+    "id": "prod-005",
+    "title": "iPad Pro 12.9\" M2 Wi-Fi",
+    "description": "The ultimate iPad experience. M2 chip delivers next-level performance. Liquid Retina XDR display with ProMotion technology. Compatible with Apple Pencil (2nd gen) and Magic Keyboard.",
+    "price": 1099,
+    "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=600&fit=crop&auto=format",
+    "category": "Tablets",
+    "rating": 4.9,
+    "stock": 20
+  },
+  {
+    "id": "prod-006",
+    "title": "Dell XPS 15 OLED (2024)",
+    "description": "Premium Windows laptop with a stunning 15.6\" OLED display, Intel Core i9-13900H, 32GB DDR5 RAM, 1TB NVMe SSD, and NVIDIA RTX 4070. CNC aluminum chassis for a sleek, professional look.",
+    "price": 2299,
+    "image": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&h=600&fit=crop&auto=format",
+    "category": "Laptops",
+    "rating": 4.7,
+    "stock": 8
+  },
+  {
+    "id": "prod-007",
+    "title": "Apple Watch Series 9 GPS + Cellular",
+    "description": "Smarter, brighter, more powerful. The new double tap gesture lets you control Apple Watch without touching the display. S9 chip, Always-On Retina display, advanced health features including ECG and blood oxygen.",
+    "price": 499,
+    "image": "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&h=600&fit=crop&auto=format",
+    "category": "Wearables",
+    "rating": 4.8,
+    "stock": 45
+  },
+  {
+    "id": "prod-008",
+    "title": "Samsung 65\" Neo QLED 4K TV",
+    "description": "Quantum Matrix Technology with Neo Quantum Processor 4K. Mini LED backlighting for exceptional contrast and brightness. 120Hz refresh rate, HDR2000, built-in Amazon Alexa and Bixby voice assistants.",
+    "price": 1799,
+    "image": "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=600&fit=crop&auto=format",
+    "category": "TVs",
+    "rating": 4.6,
+    "stock": 12
+  },
+  {
+    "id": "prod-009",
+    "title": "Logitech MX Master 3S",
+    "description": "The master of mice is back, now with near-silent clicks. 8K DPI optical tracking on any surface including glass. MagSpeed electromagnetic scroll wheel — 90% quieter. USB-C charging, 70 days on full charge.",
+    "price": 99,
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&h=600&fit=crop&auto=format",
+    "category": "Accessories",
+    "rating": 4.7,
+    "stock": 75
+  },
+  {
+    "id": "prod-010",
+    "title": "Dell UltraSharp 27\" 4K USB-C",
+    "description": "27\" IPS 3840x2160 monitor with stunning color accuracy (factory-calibrated), thin bezels, and a USB-C hub for single-cable laptop charging and display. Ideal for design, productivity, and crisp 4K content.",
+    "price": 529,
+    "image": "https://images.unsplash.com/photo-1575320854760-bfffc3550640?w=600&h=600&fit=crop&auto=format",
+    "category": "Monitors",
+    "rating": 4.7,
+    "stock": 12
+  },
+  {
+    "id": "prod-011",
+    "title": "AirPods Pro (2nd Generation)",
+    "description": "Up to 2x more Active Noise Cancellation than first generation. Adaptive Transparency lets ambient sound in while protecting your hearing. Personalized Spatial Audio with dynamic head tracking. MagSafe charging case.",
+    "price": 249,
+    "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=600&h=600&fit=crop&auto=format",
+    "category": "Audio",
+    "rating": 4.8,
+    "stock": 60
+  },
+  {
+    "id": "prod-012",
+    "title": "Samsung T7 Portable SSD 2TB",
+    "description": "Blazing fast 1050 MB/s read and 1000 MB/s write speeds over USB 3.2 Gen 2 interface. Password protection with AES 256-bit hardware encryption. Shock-resistant compact metal design. Works on PC, Mac, and Android.",
+    "price": 159,
+    "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&h=600&fit=crop&auto=format",
+    "category": "Storage",
+    "rating": 4.7,
+    "stock": 40
+  }
+]
