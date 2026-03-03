@@ -9,6 +9,7 @@ import CatalogPage from "./pages/CatalogPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CartPage from "./components/cart/CartPage";
 
+
 function Home() {
   return (
     <>
