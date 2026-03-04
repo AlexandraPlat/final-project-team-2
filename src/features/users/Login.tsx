@@ -21,7 +21,7 @@ export default function Login() {
       const timer = setTimeout(() => setShowSuccsess(false), 5000);
       return () => clearTimeout(timer);
     }
-  });
+  }, [showSuccsess]);
 
   const formik = useFormik<LoginRequest>({
     initialValues: {
