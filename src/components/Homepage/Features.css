@@ -7,6 +7,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 70px 60px;
 }
+
 .item {
   text-align: center;
   padding: 10px 20px;
@@ -23,35 +24,51 @@
   margin-bottom: 12px;
 }
 
-.description {
+.desc {
   font-size: 15px;
   color: #6b7280;
   max-width: 280px;
   margin: 0 auto;
 }
 
+/* 📱 мобильная версия wrapper */
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;
     gap: 50px;
   }
 }
+
+/* Features grid */
 .features__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-
+/* Планшет */
 @media (max-width: 1024px) {
   .features__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
+/* Телефон */
 @media (max-width: 600px) {
   .features__grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Hover эффект */
+.features__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features__link:hover {
+  transform: translateY(10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }

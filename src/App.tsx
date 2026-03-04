@@ -54,10 +54,10 @@ export default function App() {
         <Route
           path="/users"
           element={
-            <div style={{ padding: 20 }}>
-              <h1>User Management</h1>
-              <AddUser />
+            <div style={{ padding: 20, textAlign: "center" }}>
+              <h1>User Management Page</h1>
               <Login />
+              <AddUser />
               <DeleteUser />
             </div>
           }

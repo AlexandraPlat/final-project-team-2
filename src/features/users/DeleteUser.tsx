@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDeleteUserMutation } from "./api";
 import "./UserForm.css";
 
 export default function DeleteUser() {
   const [userId, setUserId] = useState<number | "">("");
-  const [deleteUser, { isLoading, isSuccess, error, data }] =
-    useDeleteUserMutation();
+  const [deleteUser, { isLoading, error, data }] = useDeleteUserMutation();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const [showSuccsess, setShowSuccsess] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSuccsess(false), 5000);
+    return () => clearTimeout(timer);
+  }, [showSuccsess]);
+
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (userId === "") return;
 
     try {
       await deleteUser(userId).unwrap();
+      setShowSuccsess(true);
+      setUserId("");
     } catch (err) {
       console.error("Delete failed:", err);
     }
@@ -37,7 +45,7 @@ export default function DeleteUser() {
         {isLoading ? "Deleting..." : "Delete User"}
       </button>
 
-      {isSuccess && data && (
+      {showSuccsess && data && (
         <div className="success">
           User {data.id} marked deleted on {data.deletedOn}
         </div>
