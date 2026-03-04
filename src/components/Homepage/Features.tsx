@@ -1,8 +1,9 @@
 import FeatureItem from "./FeatureItem";
 import Container from "./Container";
 import { Link } from "react-router-dom";
+import type { JSX } from "react";
 
-const features = [
+const features: Feature[] = [
   { 
     icon: "🚚", 
     title: "Free Delivery", 
@@ -29,14 +30,14 @@ const features = [
   }
 ];
 
-export default function Features() {
+export default function Features(): JSX.Element {
   return (
     <section className="features">
       <Container>
         <div className="features__grid">
-          {features.map((item, index) => (
-            <Link to={item.link} key={index} className="features__link">
-              <FeatureItem description={""} {...item} />
+          {features.map((item) => (
+            <Link key={item.title} to={item.link} className="features__link">
+              <FeatureItem icon={item.icon} title={item.title} desc={item.desc} />
             </Link>
           ))}
         </div>

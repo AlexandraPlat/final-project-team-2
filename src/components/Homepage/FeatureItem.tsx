@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import styles from "./FeatureItem.module.css";
 
 type FeatureItemProps = {
@@ -10,7 +11,7 @@ export default function FeatureItem({
   icon,
   title,
   description,
-}: FeatureItemProps) {
+}: FeatureItemProps): JSX.Element {
   return (
     <div className={styles.item}>
       <div className={styles.icon}>{icon}</div>
