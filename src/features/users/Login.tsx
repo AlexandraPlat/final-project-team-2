@@ -2,7 +2,7 @@ import { useFormik, type FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { useLoginMutation, type LoginRequest } from "./api";
 import "./UserForm.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // ---------- Валидатор формы ----------
 const validationSchema = Yup.object({
@@ -37,7 +37,7 @@ export default function Login() {
       try {
         await login(values).unwrap();
         resetForm();
-        setShowSuccsess(true)
+        setShowSuccsess(true);
       } catch (err) {
         console.error("Login failed:", err);
       }
@@ -88,7 +88,11 @@ export default function Login() {
       </button>
 
       {showSuccsess && <div className="success">Login successful!</div>}
-      {error && <div className="error">Failed to login. Check your Username and Password</div>}
+      {error && (
+        <div className="error">
+          Failed to login. Check your Username and Password
+        </div>
+      )}
     </form>
   );
 }
