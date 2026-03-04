@@ -15,6 +15,11 @@ import CatalogPage from "./pages/CatalogPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CartPage from "./components/cart/CartPage";
 
+import FreeDelivery from "./components/Homepage/FreeDelivery";
+import About from "./components/Homepage/About";
+import Returns from "./components/Homepage/Returns";
+import Support from "./components/Homepage/Support";
+
 function Home() {
   return (
     <>
@@ -31,12 +36,21 @@ export default function App() {
       <Header />
 
       <Routes>
+        {/* Главная */}
         <Route path="/" element={<Home />} />
+
+        {/* Каталог */}
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/cart" element={<CartPage />} />
 
-        {/* если нужно оставить user management */}
+        {/* 4 страницы фич */}
+        <Route path="/free-delivery" element={<FreeDelivery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/returns" element={<Returns />} />
+        <Route path="/support" element={<Support />} />
+
+        {/* Users */}
         <Route
           path="/users"
           element={

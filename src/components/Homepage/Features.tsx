@@ -3,7 +3,7 @@ import Container from "./Container";
 import { Link } from "react-router-dom";
 import type { JSX } from "react";
 
-const features: Feature[] = [
+const features = [
   { 
     icon: "🚚", 
     title: "Free Delivery", 
