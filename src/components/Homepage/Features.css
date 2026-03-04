@@ -23,7 +23,7 @@
   margin-bottom: 12px;
 }
 
-.description {
+.desc {
   font-size: 15px;
   color: #6b7280;
   max-width: 280px;
@@ -35,4 +35,15 @@
     grid-template-columns: 1fr;
     gap: 50px;
   }
+}
+.features__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features__link:hover {
+  transform: translateY(10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
