@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+
 // ---------- Типы данных ----------
 
 // Пользователь, который возвращается сервером при создании нового пользователя

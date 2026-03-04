@@ -2,6 +2,7 @@ import { useFormik, type FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { useLoginMutation, type LoginRequest } from "./api";
 import "./UserForm.css";
+import React, { useState, useEffect } from "react";
 
 // ---------- Валидатор формы ----------
 const validationSchema = Yup.object({
@@ -12,7 +13,15 @@ const validationSchema = Yup.object({
 });
 
 export default function Login() {
-  const [login, { isLoading, isSuccess, error }] = useLoginMutation();
+  const [login, { isLoading, error }] = useLoginMutation();
+  const [showSuccsess, setShowSuccsess] = useState(false);
+
+  useEffect(() => {
+    if (showSuccsess) {
+      const timer = setTimeout(() => setShowSuccsess(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  });
 
   const formik = useFormik<LoginRequest>({
     initialValues: {
@@ -28,6 +37,7 @@ export default function Login() {
       try {
         await login(values).unwrap();
         resetForm();
+        setShowSuccsess(true)
       } catch (err) {
         console.error("Login failed:", err);
       }
@@ -45,6 +55,7 @@ export default function Login() {
           id="username"
           name="username"
           type="text"
+          placeholder="use: emilys"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.username}
@@ -61,7 +72,7 @@ export default function Login() {
           id="password"
           name="password"
           type="password"
-          placeholder="min 6 characters"
+          placeholder="use: emilyspass"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
@@ -76,8 +87,8 @@ export default function Login() {
         {isLoading ? "Logging in..." : "Login"}
       </button>
 
-      {isSuccess && <div className="success">Login successful!</div>}
-      {error && <div className="error">Failed to login.</div>}
+      {showSuccsess && <div className="success">Login successful!</div>}
+      {error && <div className="error">Failed to login. Check your Username and Password</div>}
     </form>
   );
 }
