@@ -8,9 +8,12 @@ import {
   removeFromCart,
 } from "./cartSlice";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 // SHIPPING — фиксированная стоимость доставки.
 const SHIPPING = 9.99;
+
+type PaymentMethod = "card" | "paypal" | "klarna" | "applepay";
 
 export default function CartPage() {
   // dispatch нужен для отправки действий в Redux
@@ -29,6 +32,32 @@ export default function CartPage() {
   // Если корзина пустая — не добавляем доставку.
   // Если есть товары — subtotal + SHIPPING.
   const total = items.length > 0 ? subtotal + SHIPPING : 0;
+
+  // ✅ Способы оплаты (для визуала)
+  const [payment, setPayment] = useState<PaymentMethod>("card");
+  const paymentLabel = (p: PaymentMethod) => {
+    switch (p) {
+      case "card":
+        return "Card (Visa / MasterCard)";
+      case "paypal":
+        return "PayPal";
+      case "klarna":
+        return "Klarna (Pay later)";
+      case "applepay":
+        return "Apple Pay";
+      default:
+        return "Payment";
+    }
+  };
+
+  const handleCheckout = () => {
+    if (items.length === 0) return;
+    alert(
+      `✅ Checkout (demo)\n\nPayment: ${paymentLabel(payment)}\nTotal: $${total.toFixed(
+        2,
+      )}\n\nКогда-то будет реальная оплата 😄`,
+    );
+  };
 
   return (
     <div className={styles.cartPage}>
@@ -148,10 +177,63 @@ export default function CartPage() {
               <span className={styles.summaryTotal}>${total.toFixed(2)}</span>
             </div>
 
+            {/* ✅ Payment methods (demo) */}
+            <div className={styles.payBlock}>
+              <div className={styles.payTitle}>Payment method</div>
+
+              <label className={styles.payOption}>
+                <input
+                  className={styles.payRadio}
+                  type="radio"
+                  name="payment"
+                  checked={payment === "card"}
+                  onChange={() => setPayment("card")}
+                />
+                <span className={styles.payIcon}>💳</span>
+                <span className={styles.payText}>Card</span>
+              </label>
+
+              <label className={styles.payOption}>
+                <input
+                  className={styles.payRadio}
+                  type="radio"
+                  name="payment"
+                  checked={payment === "paypal"}
+                  onChange={() => setPayment("paypal")}
+                />
+                <span className={styles.payIcon}>🅿️</span>
+                <span className={styles.payText}>PayPal</span>
+              </label>
+
+              <label className={styles.payOption}>
+                <input
+                  className={styles.payRadio}
+                  type="radio"
+                  name="payment"
+                  checked={payment === "klarna"}
+                  onChange={() => setPayment("klarna")}
+                />
+                <span className={styles.payIcon}>🧾</span>
+                <span className={styles.payText}>Klarna</span>
+              </label>
+
+              <label className={styles.payOption}>
+                <input
+                  className={styles.payRadio}
+                  type="radio"
+                  name="payment"
+                  checked={payment === "applepay"}
+                  onChange={() => setPayment("applepay")}
+                />
+                <span className={styles.payIcon}>🍎</span>
+                <span className={styles.payText}>Apple Pay</span>
+              </label>
+            </div>
+
             {/* Оформление заказа */}
             <button
               className={styles.summaryPrimaryBtn}
-              onClick={() => alert("Checkout позже 😉")}
+              onClick={handleCheckout}
             >
               Proceed to Checkout
             </button>
