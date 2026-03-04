@@ -2,6 +2,7 @@ import { useFormik, type FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { useAddUserMutation, type NewUser } from "./api";
 import "./UserForm.css"; // общий CSS для всех форм
+import { useEffect, useState } from "react";
 
 // ---------- Валидатор формы ----------
 const validationSchema = Yup.object({
@@ -18,7 +19,15 @@ const validationSchema = Yup.object({
 // ---------- Компонент AddUser ----------
 export default function AddUser() {
   // RTK Query хук для мутации добавления пользователя
-  const [addUser, { isLoading, isSuccess, error }] = useAddUserMutation();
+  const [addUser, { isLoading, error }] = useAddUserMutation();
+  const [showSuccsess, setShowSuccsess] = useState(false);
+
+  useEffect(() => {
+    if (showSuccsess) {
+      const timer = setTimeout(() => setShowSuccsess(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccsess]);
 
   // ---------- Formik ----------
   const formik = useFormik<NewUser>({
@@ -37,6 +46,7 @@ export default function AddUser() {
         // Отправляем POST через RTK Query
         await addUser(values).unwrap();
         resetForm(); // очищаем форму
+        setShowSuccsess(true);
       } catch (err) {
         console.error("Failed to add user:", err);
       }
@@ -119,7 +129,7 @@ export default function AddUser() {
       </button>
 
       {/* Статус успеха */}
-      {isSuccess && <div className="success">User successfully added!</div>}
+      {showSuccsess && <div className="success">User successfully added!</div>}
 
       {/* Статус ошибки */}
       {error && <div className="error">Failed to add user.</div>}
