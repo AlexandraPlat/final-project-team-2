@@ -26,7 +26,7 @@ const SearchBar = ({ value, onChange }: Props) => {
 
       {/* Поле ввода */}
       <input
-        type="search"
+        type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Search products by name..."
@@ -34,7 +34,7 @@ const SearchBar = ({ value, onChange }: Props) => {
         aria-label="Search products"
       />
 
-      {/* Кнопка очистки — появляется только когда что-то введено */}
+      {/* Кнопка очистки появляется только когда что-то введено */}
       {value && (
         <button
           onClick={() => onChange("")}

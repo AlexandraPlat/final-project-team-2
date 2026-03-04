@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+html,
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   background: #f5f7fb;
   color: #111827;
 }
@@ -17,4 +22,12 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Убираю браузерные кнопки очистки, я использую свои */
+input::-ms-clear {
+  display: none;
+}
+input::-webkit-search-cancel-button {
+  display: none;
 }

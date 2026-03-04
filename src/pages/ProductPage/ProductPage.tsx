@@ -13,11 +13,11 @@ const ProductPage = () => {
   // беру весь список товаров из RTK Query кэша
   const { data: products, isLoading, isError } = useGetProductsQuery();
 
-  // подключаю Redux — dispatch для отправки действий
+  // подключаю Redux ... dispatch для отправки действий
   const dispatch = useAppDispatch();
 
   // прроверяю есть ли уже этот товар в корзине
-  // state.cart.items — массив CartItem (Product + qty)
+  // state.cart.items массив CartItem (Product + qty)
   const isInCart = useAppSelector((state) =>
     state.cart.items.some((item) => item.id === id),
   );
@@ -32,7 +32,7 @@ const ProductPage = () => {
   // я ищу конкретный товар по id из URL среди всех загруженных товаров
   const product = id ? products?.find((p) => p.id === id) : undefined;
 
-  // а если товар не найден — показывю страницу 404
+  // а если товар не найден  показывю страницу 404
   if (!product) {
     return (
       <div className={styles.notFound}>
@@ -102,7 +102,7 @@ const ProductPage = () => {
                   className={`${styles.stockDot} ${styles.stockDotGreen}`}
                 />
                 <span className={styles.stockTextGreen}>
-                  In stock ({product.stock} pcs)
+                  In stock ({product.stock} st.){" "}
                 </span>
               </>
             ) : (

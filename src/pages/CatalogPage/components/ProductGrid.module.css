@@ -4,21 +4,21 @@
   gap: 24px;
 }
 
-/* планшет — 2 колонки */
+/* планшет 2 колонки */
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* десктоп — 3 колонки */
+/* десктоп 3 колонки */
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* широкий экран — 4 колнки */
+/* широкий экран 4 колнки */
 @media (min-width: 1280px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
