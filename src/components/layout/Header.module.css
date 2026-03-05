@@ -1,13 +1,14 @@
 .header {
-  background: white;
-  padding: 24px 0;
+  background: rgb(233, 201, 201);
+  border-bottom: 1px solid #e2e8f0;
+  
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,6 +17,8 @@
 .logo {
   font-weight: 700;
   font-size: 20px;
+  text-decoration: none;
+  color: #0f172a;
 }
 
 .nav {
@@ -30,4 +33,30 @@
 
 .nav a:hover {
   color: #2563eb;
+}
+.link {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: #2563eb;
+}
+
+.active {
+  color: #2563eb;
+  font-weight: 600;
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2563eb;
 }
