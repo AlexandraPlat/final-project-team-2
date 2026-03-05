@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import AddUser from "./features/users/AddUser";
+import DeleteUser from "./features/users/DeleteUser";
+import Login from "./features/users/Login";
 
-function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+
+import Features from "./components/Homepage/Features";
+import CallToAction from "./components/Homepage/CallToAction";
+import Hero from "./components/Homepage/Hero";
+
+import CatalogPage from "./pages/CatalogPage";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import CartPage from "./components/cart/CartPage";
+
+import FreeDelivery from "./components/Homepage/FreeDelivery";
+import About from "./components/Homepage/About";
+import Returns from "./components/Homepage/Returns";
+import Support from "./components/Homepage/Support";
+
+function Home() {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Hero />
+      <Features />
+      <CallToAction />
     </>
-  )
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+
+      <Routes>
+        {/* Главная */}
+        <Route path="/" element={<Home />} />
+
+        {/* Каталог */}
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/cart" element={<CartPage />} />
+
+        {/* 4 страницы фич */}
+        <Route path="/free-delivery" element={<FreeDelivery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/returns" element={<Returns />} />
+        <Route path="/support" element={<Support />} />
+
+        {/* Users */}
+        <Route
+          path="/users"
+          element={
+            <div style={{ padding: 20, textAlign: "center" }}>
+              <h1>User Management Page</h1>
+              <Login />
+              <AddUser />
+              <DeleteUser />
+            </div>
+          }
+        />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
+  );
+}

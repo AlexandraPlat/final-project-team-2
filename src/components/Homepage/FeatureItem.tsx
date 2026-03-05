@@ -1,0 +1,22 @@
+import type { JSX } from "react";
+import styles from "./FeatureItem.module.css";
+
+type FeatureItemProps = {
+  icon: React.ReactNode; // лучше чем string
+  title: string;
+  desc: string;
+};
+
+export default function FeatureItem({
+  icon,
+  title,
+  desc,
+}: FeatureItemProps): JSX.Element {
+  return (
+    <div className={styles.item}>
+      <div className={styles.icon}>{icon}</div>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{desc}</p>
+    </div>
+  );
+}
